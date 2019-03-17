@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build:lib": "babel src --out-dir lib",
+    "windows-build": "npm run build:lib && SET NODE_ENV=production webpack --config webpack.prod.config.js",
     "build": "npm run build:lib && NODE_ENV=production webpack --config webpack.prod.config.js",
     "dev": "webpack-dev-server --inline --hot --progress --colors --host 0.0.0.0 --devtool eval",
     "postbuild": "NODE_ENV=production TARGET=minify webpack --config webpack.prod.config.js",

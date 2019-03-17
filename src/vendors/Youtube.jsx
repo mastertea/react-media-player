@@ -57,11 +57,13 @@ class Youtube extends Component {
 
   _createPlayer() {
     this._player = new YT.Player(this._node, {
+      width:this.props.width ? this.props.width : undefined,
+      height:this.props.height ? this.props.height : undefined, 
       videoId: this._videoId,
       events: this._events(),
       playerVars: {
         controls: 0,
-        showinfo: 0,
+        showinfo: 0, 
         modestbranding: 1,
       },
     })
